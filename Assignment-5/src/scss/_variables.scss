@@ -1,0 +1,31 @@
+// Colors from starter CSS
+$color-accent: #E65C43;   // orange accent (links, h1, headline bg)
+$color-white:  #fff;
+$color-dark:   #30353D;   // footer background
+$color-mid:    #666;      // body mid text
+$color-greybar:#F5F6F6;
+
+// Fonts
+$font-base: 'Roboto', sans-serif;
+
+// Layout widths
+$container-width: 940px;
+
+// Spacing scale
+$space-0: 0;
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 2rem;
+$space-6: 3rem;
+
+// Image base path (used for bg and sprites)
+$img-path: "../../images";
+
+// Breakpoints (we'll use "down" like the original CSS)
+$breakpoints: (
+  down-959: 959px,
+  down-767: 767px,
+  down-459: 459px
+);

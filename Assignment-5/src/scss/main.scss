@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+@import "nav";
+
+/* BASIC / BODY */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  font-family: $font-base;
+  font-size: 1em;
+  line-height: 2em;
+  background: url("#{$img-path}/bg.gif") $color-white repeat-x;
+  margin: 0;
+}
+
+main {
+  width: $container-width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* NAV + LOGO */
+figure {
+  @include logo(400px, 190px);
+  float: left;
+}
+
+/* HEADER */
+header {
+  @include hero(40px);
+
+  img   { max-width: 100%; height: auto; }
+  h1    { color: $color-accent; font-weight: 100; font-size: 4em; line-height: 0; }
+  h2    { color: $color-white; font-weight: 900; font-size: 2.5em; line-height: 0; margin-bottom: 70px; }
+  h3    { color: $color-mid;   font-weight: 400; font-size: 2em;   line-height: 0; margin-bottom: 50px; }
+}
+
+/* CONTENT */
+#headline {
+  width: 100%;
+  height: 130px;
+  background: $color-accent;
+  text-align: center;
+  margin: 0 auto;
+
+  h1 { color: $color-white; font-size: 2.5em; font-weight: 100; padding-top: 50px; margin: 0; }
+}
+
+#content {
+  width: $container-width;
+  margin: 20px auto;
+
+  h3 { color: $color-mid; font-size: 2em; font-weight: 400; }
+
+  #products {
+    width: 460px;
+    float: left;
+
+    img { float: left; margin-right: 20px; }
+    article { margin-bottom: 40px; }
+    h4 { line-height: 1em; }
+  }
+
+  #testimonials { width: 460px; float: right; }
+}
+
+/* FOOTER + GREY BAR */
+.greybar { width: 100%; height: 90px; background: $color-greybar; clear: both; padding-top: 30px; }
+
+footer {
+  width: 100%;
+  height: 120px;
+  background: $color-dark;
+  text-align: center;
+  color: $color-white;
+  padding-top: 50px;
+
+  .social-media {
+    margin: 0 auto;
+    width: 165px;
+
+    div { float: left; margin-right: 5px; }
+    a  { display: block; width: 36px; height: 36px; text-indent: -9999px; }
+
+    .one   { background: url("#{$img-path}/social-media.png")   0    0; }
+    .two   { background: url("#{$img-path}/social-media.png")  -38px 0; }
+    .three { background: url("#{$img-path}/social-media.png")  -76px 0; }
+    .four  { background: url("#{$img-path}/social-media.png") -114px 0; }
+  }
+}
+
+/* MEDIA QUERIES — same breakpoints & behavior as original CSS */
+@include break-down(down-959) {
+  main { width: 768px; }
+  figure { width: inherit; height: 140px; float: none; background-position: center; }
+  nav { width: inherit; height: 50px; float: none; text-align: center; }
+  nav ul { margin-top: 0; }
+  nav ul li { font-size: 1em; margin: 0 10px; }
+  header h1 { font-size: 3em; }
+  header h2 { font-size: 1.5em; }
+  #content { width: inherit; }
+  #content #products,
+  #content #testimonials { width: 46%; margin: 0 2%; }
+}
+
+@include break-down(down-767) {
+  main { width: 460px; }
+  nav ul li { font-size: 0.8em; margin: 0 5px; }
+  header h1 { font-size: 2em; }
+  header h2 { font-size: 1em; }
+  header img { margin-bottom: 100px; }
+  header h3 { font-size: 1.5em; }
+  #headline h1 { font-size: 2em; padding-top: 50px; }
+  #content #products,
+  #content #testimonials { width: 96%; margin: 0 2%; float: none; }
+}
+
+@include break-down(down-459) {
+  main { width: 300px; }
+  figure { background-size: contain; height: 100px; }
+  nav { margin-bottom: 40px !important; }
+  select { width: 95%; }
+  #headline h1 { font-size: 1.5em; padding-top: 30px; }
+  header img { margin-bottom: 80px; }
+  header h1:first-child { font-size: 1.4em; margin-bottom: 20px; }
+  header h2 { font-size: 1.4em; }
+  header h3 { color: $color-white; font-size: 1em; }
+  #content h3 { font-size: 1.6em; }
+  .greybar, article img { display: none; }
+  footer { text-align: center; }
+  footer p, footer img { float: none; margin: 0; }
+}

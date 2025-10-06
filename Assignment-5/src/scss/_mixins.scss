@@ -1,0 +1,42 @@
+@use "sass:map";
+
+// Media-query helpers (match original max-width style)
+@mixin break-down($name) {
+  $bp: map.get($breakpoints, $name);
+  @if $bp {
+    @media screen and (max-width: $bp) { @content; }
+  } @else {
+    @warn "Unknown breakpoint: #{$name}";
+  }
+}
+
+// Generic box
+@mixin box($bg: transparent, $pad: $space-3, $radius: 0, $shadow: none) {
+  background: $bg;
+  padding: $pad;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+// Logo block
+@mixin logo($w: 400px, $h: 190px) {
+  width: $w;
+  height: $h;
+  background: url("#{$img-path}/logo.png") no-repeat 0 50px;
+  display: block;
+  margin: 0;
+}
+
+// Nav container
+@mixin nav-container($height: 190px, $align: right) {
+  height: $height;
+  text-align: $align;
+}
+
+// Hero header
+@mixin hero($pad-top: 40px) {
+  width: inherit;
+  clear: both;
+  text-align: center;
+  padding-top: $pad-top;
+}
