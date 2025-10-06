@@ -1,0 +1,15 @@
+body{
+  font-family: $bodyfont, sans-serif;
+  font-size:1em;
+  line-height:2em;
+  background:url($bgimage) $white repeat-x;
+  margin:0;
+ 
+}
+main{
+  width:940px;margin:0 auto;padding:0 10px;
+  @include break(959px)       {width:768px;}
+  @include break(767px)       {width:460px;}
+  @include break(459px)       {width:300px;}
+      
+}

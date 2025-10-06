@@ -1,0 +1,65 @@
+figure {
+    @include navigation(400px, 190px, left);
+    background: url($logoimage) no-repeat 0 50px;
+    display: block;
+    margin: 0;
+
+    @include break(959px) {
+        @include navigation(inherit, 140px, none);
+        background-position: center;
+    }
+
+    @include break(459px) {
+        background-size: contain;
+        height: 100px;
+    }
+}
+
+nav {
+    @include navigation(540px, 190px, left);
+    text-align: right;
+
+    @include break(959px) {
+        @include navigation(inherit, 50px, none);
+        text-align: center;
+    }
+
+    @include break(459px) {
+        margin-bottom: 40px !important;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 95px;
+
+        @include break(959px) {
+            margin-top: 0;
+        }
+
+        li {
+            display: inline;
+            font-size: 0.8em;
+            margin-right: 10px;
+
+            @include break(959px) {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+
+            @include break(767px) {
+                font-size: 0.8em;
+                margin: 0 5px;
+            }
+
+            a {
+                color: $red;
+                text-decoration: none;
+                letter-spacing: -0.01em;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

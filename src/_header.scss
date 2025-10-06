@@ -1,0 +1,32 @@
+header{
+    width:inherit;clear:both;text-align:center;padding-top:40px;
+    img{
+        max-width:100%;height:auto;
+        @include break(767px)   {margin-bottom:100px;}
+        @include break(459px)   {margin-bottom:80px;}
+    }
+    h1{
+         @include headers($red, 100, 4em, 0);
+         @include break(959px)      {font-size:3em;}
+         @include break(767px)      {font-size:2em;}
+         @include break(459px)
+            {
+                & :first-child	{
+                font-size:1.4em;margin-bottom:20px;
+                }
+            }
+    }
+    h2{
+        @include headers($white, 900, 2.5em, 0);
+        margin-bottom:70px;
+        @include break(959px)       {font-size:1.5em;}
+        @include break(767px)       {font-size:1em;}
+        @include break(459px)       {font-size:1.4em;}
+    }
+    h3{
+       @include headers($grey, 400, 2em, 0);
+        margin-bottom:50px;
+        @include break(767px)       {font-size:1.5em;}
+        @include break(459px)       {color:$white;font-size:1em;}
+    }
+}

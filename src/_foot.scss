@@ -1,0 +1,35 @@
+.greybar
+    {   
+      @include size(100%, 90px);
+      background:$greybarbg;clear:both;padding-top:30px;
+      @include break(459px)     {display:none;}
+    }
+
+
+footer{
+    @include size(100%, 120px);
+    background:$footerbg;
+    text-align:center;
+    color:$white;
+    padding-top:50px;
+   
+    @include break(459px)       {text-align:center;}
+   
+    $list : 0, -38px, -76px, -114px;
+    $divlist : one, two, three, four;
+
+    .social-media{
+        margin:0 auto;width:165px;
+        div     {float:left;margin-right:5px;}
+        a       {@include size(36px, 36px); display:block;text-indent:-9999px;}
+        
+        @for $var from 1 through 4 {
+            div.#{nth($divlist, $var)} {background:url($socialmediabg) nth($list, $var) 0;}
+        }
+        /* 
+        div.one       {background:url($socialmediabg) 0 0;}
+        div.two 	    {background:url($socialmediabg) -38px 0;}
+        div.three     {background:url($socialmediabg) -76px 0;}
+        div.four 	    {background:url($socialmediabg) -114px 0;}*/
+    }
+}

@@ -1,0 +1,31 @@
+@mixin headers($clor, $fnt-wt, $fnt-sz, $ln-ht){
+    color: $clor;
+    font-weight: $fnt-wt;
+    font-size: $fnt-sz;
+    line-height: $ln-ht;
+    }
+    
+    @mixin size($wt, $ht){
+        width:$wt;
+        height:$ht;
+    }
+    
+    @mixin navigation($wt, $ht, $float){
+        @include size($wt, $ht);
+        float: $float;
+        }
+    
+    @mixin contents($wt, $flt){
+        width: $wt;
+        float: $flt;
+    }
+    
+    @mixin break($args){
+        @if length($args) == 1{
+            @media (max-width: nth($args, 1)){
+                @content;
+        }
+       
+        }
+    }
+    
